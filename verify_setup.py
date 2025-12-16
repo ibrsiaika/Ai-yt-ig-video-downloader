@@ -64,17 +64,33 @@ def check_env_file():
     
     print("   ✅ .env file exists")
     
-    # Check if token is set
+    # Check if token is set and validate format
     with open(env_path, 'r') as f:
         content = f.read()
         if 'TELEGRAM_BOT_TOKEN=' in content:
-            if 'your_telegram_bot_token_here' in content or 'your_token_here' in content:
-                print("   ⚠️  .env file exists but token not set")
-                print("   💡 Add your actual bot token from @BotFather")
-                return False
-            else:
-                print("   ✅ Token appears to be set")
-                return True
+            # Extract token value
+            for line in content.split('\n'):
+                if line.startswith('TELEGRAM_BOT_TOKEN='):
+                    token = line.split('=', 1)[1].strip()
+                    
+                    # Check for placeholder values
+                    if 'your_telegram_bot_token_here' in token or 'your_token_here' in token or not token:
+                        print("   ⚠️  .env file exists but token not set")
+                        print("   💡 Add your actual bot token from @BotFather")
+                        return False
+                    
+                    # Validate token format (should be digits:random_string)
+                    import re
+                    if re.match(r'^\d+:[A-Za-z0-9_-]+$', token):
+                        print("   ✅ Token is set and format looks valid")
+                        return True
+                    else:
+                        print("   ⚠️  Token is set but format looks invalid")
+                        print("   💡 Valid format: 123456789:ABCdefGHIjklMNOpqrsTUVwxyz")
+                        return False
+            
+            print("   ❌ TELEGRAM_BOT_TOKEN line found but couldn't parse value")
+            return False
         else:
             print("   ❌ TELEGRAM_BOT_TOKEN not found in .env")
             return False

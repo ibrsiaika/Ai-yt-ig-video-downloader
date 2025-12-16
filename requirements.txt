@@ -1,0 +1,20 @@
+# Core Telegram Bot library
+# Telegram Bot की core library
+python-telegram-bot==20.7
+
+# YouTube download library
+# YouTube download करने की library
+yt-dlp==2023.12.30
+
+# Instagram download library (optional fallback)
+# Instagram download करने की library (optional fallback)
+instaloader==4.10.3
+
+# Environment variable management
+# Environment variables manage करने के लिए
+python-dotenv==1.0.0
+
+# Additional dependencies
+# अतिरिक्त dependencies
+requests==2.31.0
+certifi==2023.11.17

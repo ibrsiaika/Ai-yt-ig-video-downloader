@@ -1,0 +1,55 @@
+# Environment variables / Environment variables
+.env
+
+# Python cache / Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments / Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Downloaded files / Download की गई files
+downloads/
+*.mp4
+*.mp3
+*.m4a
+*.webm
+
+# IDE / Editor files / IDE/Editor की files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files / OS की files
+.DS_Store
+Thumbs.db
+
+# Logs / Logs
+*.log
+
+# Distribution / packaging / Distribution/packaging
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*

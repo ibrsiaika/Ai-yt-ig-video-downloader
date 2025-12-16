@@ -80,7 +80,15 @@ Edit `.env` file और अपना Telegram Bot Token डालें:
 TELEGRAM_BOT_TOKEN=your_bot_token_here
 ```
 
-6. **Run the bot / Bot को चलाएं**
+6. **Verify setup (Optional) / Setup verify करें (वैकल्पिक)**
+```bash
+python verify_setup.py
+```
+
+This will check if everything is properly configured.
+यह check करेगा कि सब कुछ properly configured है या नहीं।
+
+7. **Run the bot / Bot को चलाएं**
 ```bash
 python main.py
 ```
@@ -113,6 +121,7 @@ python main.py
 ├── youtube_handler.py       # YouTube download logic / YouTube download की logic
 ├── instagram_handler.py     # Instagram download logic / Instagram download की logic
 ├── utils.py                 # Helper functions / Helper functions
+├── verify_setup.py          # Setup verification script / Setup verify करने की script
 ├── requirements.txt         # Python dependencies / Python की dependencies
 ├── .env.example            # Environment template / Environment की template
 ├── .gitignore              # Git ignore file
